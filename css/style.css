@@ -1,0 +1,219 @@
+/*
+1. Global Styles: Sets the overall page layout and styling
+*/
+body {
+    ____: flex; /* Centers content horizontally */
+     justify-_____: _____; /* Aligns content in the center */
+     align-____: ___; /* Aligns content vertically */
+     height: 100vh; /* Full height viewport */
+     _______-color: #fff; /* White background */
+     text-align: center; /* Centers text */
+    _____-____: 'Dancing Script', cursive; /* Sets a cursive font */
+     color: #d63384; /* Sets primary text color */
+     cursor: url('image/red-heart.png'), auto; /* Custom heart cursor */
+  
+  }
+  
+  button, select, textarea {
+     cursor: url('image/red-heart.png'), auto; /* Applies heart cursor to form elements */
+  }
+  
+  /*
+  2. Envelope Animation: Handles the envelope's hover and click effects
+  */
+  .envelope-container {
+     display: flex;
+     justify-content: _____;
+     ____-items: center;
+     height: 100vh;
+  }
+  
+  /*
+  2. Envelope Animation: Handles the envelope's hover and click effects
+  */
+  
+  .envelope {
+     width: 150px; /* Sets the width of the envelope image */
+     height: auto; /* Ensures the height scales proportionally to maintain aspect ratio */
+     ____: pointer; /* Changes the cursor to a pointer, indicating interactivity */
+     transition: transform 0.6s ease-in-out; /* Smooth animation for size changes */
+     filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.2)); /* Adds a subtle shadow to the envelope */
+  }
+  
+  .____:hover {
+     transform: scale(1.05); /* Slightly increases the size of the envelope when hovered over */
+  }
+  
+  /*
+     This class is applied when the envelope is clicked.
+     The animation makes the envelope spin and "fly away," creating a fun interaction.
+  */
+  .jump-spin {
+     animation: jumpSpin 1s ease-in-out forwards; /* Triggers the jumpSpin animation */
+  }
+  
+  @keyframes jumpSpin {
+     0% { transform: translateY(0) rotate(0deg); } /* Starts in normal position */
+     50% { transform: translateY(-50px) rotate(180deg); } /* Moves up slightly and rotates halfway */
+     100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } 
+     /* Moves completely off the screen and fades out */
+  }
+  
+  /*
+  3. E-Card Styling: Controls the e-card's look and feel
+  */
+  .ecard {
+     display: none; /* Initially hides the e-card until it's activated via JavaScript */
+     margin-top: 20px; /* Adds space above the e-card */
+     padding: 20px; /* Adds space inside the e-card */
+     border-radius: 10px; /* Rounds the corners for a softer appearance */
+     text-___: center; /* Aligns the text within the e-card */
+     font-size: 18px; /* Increases text size for readability */
+     font-weight: bold; /* Makes the text more prominent */
+     color: white; /* Sets the text color */
+     ____: 80%; /* Restricts the width of the e-card */
+     margin: 0 auto; /* Centers the e-card horizontally */
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow to give depth */
+  }
+  
+  /* The container that holds the e-card elements */
+  .ecard-container {
+     display: flex; /* Arranges child elements in a flexible layout */
+     flex-direction: column; /* Stacks elements vertically */
+     align-items: center; /* Centers items horizontally */
+     justify-_____: center; /* Centers items vertically */
+     max-width: 450px; /* Restricts the container's width */
+     width: 100%;
+     background: white; /* Sets the background color */
+     border-radius: 20px; /* Rounds the edges */
+     box-_____: 0 6px 15px rgba(0, 0, 0, 0.15); /* Creates a shadow effect */
+     text-align: center; /* Centers the text */
+     border: 3px solid #ff69b4; /* Adds a pink border */
+     padding: 25px; /* Adds space inside the container */
+     position: relative; /* Allows positioning adjustments */
+     animation: fadeIn 1s ease-in-out; /* Applies a smooth fade-in effect */
+  }
+  
+  /*
+  4. Form Styling: Adjusts the input fields and buttons
+  */
+  
+  .ecard-form {
+     display: flex;
+     flex-direction: _____; /* Stacks form elements vertically */
+     align-items: center; /* Aligns form fields in the center */
+     ______-content: center;
+     gap: 12px; /* Adds spacing between form elements */
+     width: 100%;
+     max-width: 350px; /* Restricts the width of the form */
+  }
+  
+  /* Styles input fields, text areas, and buttons consistently */
+  textarea, ____, button {
+     width: 100%; /* Ensures elements expand to fill their container */
+     max-width: 100%;
+     padding: 12px; /* Adds padding inside the fields */
+     border-radius: 10px; /* Rounds the corners */
+     border: 2px solid #d63384; /* Sets a pink border */
+     font-size: 16px; /* Increases text size for better readability */
+     outline: none; /* Removes default focus outline */
+  }
+  
+  /* Adjustments specifically for textareas */
+  textarea {
+     min-height: 100px; /* Sets a minimum height */
+     resize: none; /* Disables resizing to maintain consistency */
+  }
+  
+  /*
+  5. Button Styling: Enhances the appearance of the interactive buttons
+  */
+  
+  .button-container {
+     width: 100%;
+     ______: flex;
+     justify-content: center; /* Centers the button horizontally */
+  }
+  
+  /* Styles the main button */
+  button {
+     background: #ff69b4; /* Sets the primary button color */
+     color: white; /* Sets the text color */
+     font-weight: bold; /* Makes the text stand out */
+     cursor: pointer; /* Changes the cursor to indicate interactivity */
+     transition: all 0.3s; /* Smooth transition effects */
+     border: none; /* Removes default button border */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     max-width: 100%;
+     padding: 12px 20px; /* Adds padding for a comfortable click area */
+  }
+  
+  /* Changes button appearance when hovered */
+  button:hover {
+     background: #ff1493; /* Darkens the pink color */
+     transform: scale(1.05); /* Slightly enlarges the button */
+  }
+  
+  /*
+  6. Additional Decorative Elements: Small styling adjustments for aesthetics
+  */
+  .subtext {
+     font-size: 14px; /* Reduces font size for subtext */
+     _____: #d63384; /* Matches the theme color */
+     font-style: italic; /* Makes the text slightly more stylish */
+     margin-bottom: 10px; /* Adds space below */
+  }
+  
+  /* Adds animation to the email icon decoration */
+  .email-decoration {
+     width: 60px; /* Sets a specific width */
+     margin-_____: 10px; /* Adds space below */
+     animation: bounce 1.5s infinite ease-in-out; /* Makes the icon bounce */
+  }
+  
+  /* Defines the bounce animation */
+  @keyframes bounce {
+     0%, 100% { transform: translateY(0); } /* Starts and ends in place */
+     50% { transform: translateY(-5px); } /* Moves slightly upward in the middle */
+  }
+  
+  /*
+  7. Thank You Page Styling: Adjustments specifically for the Thank You page
+  */
+  
+  .thank-you-container {
+     display: ____;
+     flex-direction: column;
+     align-items: center;
+  }
+  
+  /* Heart animation controlled via JavaScript */
+  .hovering-heart {
+     width: 150px; /* Sets a fixed width */
+     margin-bottom: 20px; /* Adds space below */
+     animation: hoverAnimation 1.5s infinite ease-in-out; /* Applies hover effect */
+  }
+  
+  /* Styles the main heading */
+  h1 {
+     font-size: 36px; /* Sets the font size */
+  }
+  
+  /* Styles the paragraph */
+  p {
+     font-size: 18px; /* Increases font size for readability */
+     max-width: 400px; /* Restricts width for better layout */
+  }
+  
+  /* Defines the hovering animation */
+  @keyframes hoverAnimation {
+     0%, 100% {
+         transform: translateY(0); /* Starts and ends in the same place */
+     }
+     50% {
+         transform: translateY(-10px); /* Moves slightly upward */
+     }
+  }
+  
