@@ -2,29 +2,26 @@
 1. Global Styles: Sets the overall page layout and styling
 */
 body {
-    ____: flex; /* Centers content horizontally */
-     justify-_____: _____; /* Aligns content in the center */
-     align-____: ___; /* Aligns content vertically */
+   display: flex; /* Centers content horizontally */
+     justify-content: center; /* Aligns content in the center */
+     align-content: center; /* Aligns content vertically */
      height: 100vh; /* Full height viewport */
-     _______-color: #fff; /* White background */
+     background-color: rgb(242, 199, 206); /* White background */
      text-align: center; /* Centers text */
-    _____-____: 'Dancing Script', cursive; /* Sets a cursive font */
-     color: #d63384; /* Sets primary text color */
-     cursor: url('image/red-heart.png'), auto; /* Custom heart cursor */
-  
+     font-family: "Atma", serif;
+     font-weight: 400;
+     font-style: normal;
+     color: #d63384; /* Sets primary text color */  
   }
   
-  button, select, textarea {
-     cursor: url('image/red-heart.png'), auto; /* Applies heart cursor to form elements */
-  }
   
   /*
   2. Envelope Animation: Handles the envelope's hover and click effects
   */
   .envelope-container {
      display: flex;
-     justify-content: _____;
-     ____-items: center;
+     justify-content: center;
+     align-items: center;
      height: 100vh;
   }
   
@@ -35,12 +32,12 @@ body {
   .envelope {
      width: 150px; /* Sets the width of the envelope image */
      height: auto; /* Ensures the height scales proportionally to maintain aspect ratio */
-     ____: pointer; /* Changes the cursor to a pointer, indicating interactivity */
+     cursor : pointer; /* Changes the cursor to a pointer, indicating interactivity */
      transition: transform 0.6s ease-in-out; /* Smooth animation for size changes */
      filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.2)); /* Adds a subtle shadow to the envelope */
   }
   
-  .____:hover {
+  .envelope:hover {
      transform: scale(1.05); /* Slightly increases the size of the envelope when hovered over */
   }
   
@@ -63,53 +60,24 @@ body {
   3. E-Card Styling: Controls the e-card's look and feel
   */
   .ecard {
-     display: none; /* Initially hides the e-card until it's activated via JavaScript */
+   background: linear-gradient(135deg, #ff69b4, #ff1493); /* Creates a pink gradient background */
      margin-top: 20px; /* Adds space above the e-card */
      padding: 20px; /* Adds space inside the e-card */
      border-radius: 10px; /* Rounds the corners for a softer appearance */
-     text-___: center; /* Aligns the text within the e-card */
+     text-align: center; /* Aligns the text within the e-card */
      font-size: 18px; /* Increases text size for readability */
      font-weight: bold; /* Makes the text more prominent */
      color: white; /* Sets the text color */
-     ____: 80%; /* Restricts the width of the e-card */
+     max-width: 80%; /* Restricts the width of the e-card */
      margin: 0 auto; /* Centers the e-card horizontally */
      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow to give depth */
   }
+
+
   
-  /* The container that holds the e-card elements */
-  .ecard-container {
-     display: flex; /* Arranges child elements in a flexible layout */
-     flex-direction: column; /* Stacks elements vertically */
-     align-items: center; /* Centers items horizontally */
-     justify-_____: center; /* Centers items vertically */
-     max-width: 450px; /* Restricts the container's width */
-     width: 100%;
-     background: white; /* Sets the background color */
-     border-radius: 20px; /* Rounds the edges */
-     box-_____: 0 6px 15px rgba(0, 0, 0, 0.15); /* Creates a shadow effect */
-     text-align: center; /* Centers the text */
-     border: 3px solid #ff69b4; /* Adds a pink border */
-     padding: 25px; /* Adds space inside the container */
-     position: relative; /* Allows positioning adjustments */
-     animation: fadeIn 1s ease-in-out; /* Applies a smooth fade-in effect */
-  }
-  
-  /*
-  4. Form Styling: Adjusts the input fields and buttons
-  */
-  
-  .ecard-form {
-     display: flex;
-     flex-direction: _____; /* Stacks form elements vertically */
-     align-items: center; /* Aligns form fields in the center */
-     ______-content: center;
-     gap: 12px; /* Adds spacing between form elements */
-     width: 100%;
-     max-width: 350px; /* Restricts the width of the form */
-  }
   
   /* Styles input fields, text areas, and buttons consistently */
-  textarea, ____, button {
+  textarea, input, button {
      width: 100%; /* Ensures elements expand to fill their container */
      max-width: 100%;
      padding: 12px; /* Adds padding inside the fields */
@@ -119,22 +87,69 @@ body {
      outline: none; /* Removes default focus outline */
   }
   
-  /* Adjustments specifically for textareas */
-  textarea {
-     min-height: 100px; /* Sets a minimum height */
-     resize: none; /* Disables resizing to maintain consistency */
+
+
+  /* Styles for card container */
+  .card-container {
+
+       display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           max-width: 500px;
+           width: 100%;
+           height: 80vh;
+           box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 15px;
+           text-align: center;
+           position: relative;
+           background: white;
+           border-radius: 20px;
+           border-width: 3px;
+           border-style: solid;
+           border-color: rgb(255, 105, 180);
+           border-image: initial;
+           padding: 25px;
+           animation: 1s ease-in-out 0s 1 normal none running fadeIn;
+           text-align: center; 
+           gap: 20px;
   }
-  
+  /* Styling for Valentine Question */
+  .valentine-question {
+       font-size: 24px;
+           font-weight: bold;
+           margin-bottom: 20px;
+           color: #d63384;
+           animation: 1s ease-in-out 0s 1 normal none running fadeIn;
+  }
   /*
   5. Button Styling: Enhances the appearance of the interactive buttons
   */
   
   .button-container {
      width: 100%;
-     ______: flex;
+     display: flex;
+     flex-direction: row; /* Stacks buttons vertically */
      justify-content: center; /* Centers the button horizontally */
+       gap: 12px; /* Adds space between buttons */
+       height: 100px;
+     
+       
   }
-  
+  .yes-button {
+   --tw-bg-opacity: 1;
+    background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+    font-family: "Atma", serif;
+  font-weight: 500;
+  font-style: normal;
+   
+  }
+   .no-button {
+      --tw-bg-opacity: 1;
+      background-color: rgb(244 63 94 / var(--tw-bg-opacity));
+      font-family: "Atma", serif;
+  font-weight: 500;
+  font-style: normal;
+   }
   /* Styles the main button */
   button {
      background: #ff69b4; /* Sets the primary button color */
@@ -156,49 +171,49 @@ body {
      transform: scale(1.05); /* Slightly enlarges the button */
   }
   
-  /*
-  6. Additional Decorative Elements: Small styling adjustments for aesthetics
-  */
-  .subtext {
-     font-size: 14px; /* Reduces font size for subtext */
-     _____: #d63384; /* Matches the theme color */
-     font-style: italic; /* Makes the text slightly more stylish */
-     margin-bottom: 10px; /* Adds space below */
-  }
-  
-  /* Adds animation to the email icon decoration */
-  .email-decoration {
-     width: 60px; /* Sets a specific width */
-     margin-_____: 10px; /* Adds space below */
-     animation: bounce 1.5s infinite ease-in-out; /* Makes the icon bounce */
-  }
-  
+
   /* Defines the bounce animation */
   @keyframes bounce {
      0%, 100% { transform: translateY(0); } /* Starts and ends in place */
      50% { transform: translateY(-5px); } /* Moves slightly upward in the middle */
   }
   
-  /*
-  7. Thank You Page Styling: Adjustments specifically for the Thank You page
-  */
-  
-  .thank-you-container {
-     display: ____;
-     flex-direction: column;
-     align-items: center;
-  }
-  
+ 
   /* Heart animation controlled via JavaScript */
   .hovering-heart {
      width: 150px; /* Sets a fixed width */
      margin-bottom: 20px; /* Adds space below */
      animation: hoverAnimation 1.5s infinite ease-in-out; /* Applies hover effect */
   }
+
+  /* Style yes-page */
+  .yes-page {
+   display: flex; /* Centers content horizontally */
+   flex-direction: column;
+  height: 80vh; /* Full height viewport */
+   justify-content: center; /* Aligns content in the center */
+   align-content: center; /* Aligns content vertically */
+   background-color: #fff; /* White background */
+   text-align: center; /* Centers text */
+   color: #d63384; /* Sets primary text color */
+   border-radius: 20px;
+   border-width: 3px;
+   border-style: solid;
+   border-color: rgb(255, 105, 180);
+   border-image: initial;
+   padding: 25px;
+   animation: 1s ease-in-out 0s 1 normal none running fadeIn;
+  }
+
+  .yes-page h1, img {
+   max-width: 100%;
+   max-height: 80%;
+   object-fit: contain;
+  }
   
   /* Styles the main heading */
   h1 {
-     font-size: 36px; /* Sets the font size */
+     font-size: 50px; /* Sets the font size */
   }
   
   /* Styles the paragraph */

@@ -1,43 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
     /*
     🎯 Function: openEnvelope
-    📌 Purpose: Triggers an animation on the envelope when clicked 
-    and then redirects the user to the e-card creation page.
-    */
+*/
     function openEnvelope() {
         let envelope = document.querySelector('.envelope'); // 🔍 Selects the envelope element
         envelope.classList.add('jump-spin'); // 🎬 Adds animation to make it spin and fly off the screen
         
         setTimeout(() => {
-            window.location.href = 'ecard.html'; // ⏳ Waits for the animation to complete, then redirects
+            window.location.href ='mainpage.html' // ⏳ Waits for the animation to complete, then redirects
         }, 1000); // ⏱ Challenge: What happens if you change 1000 to 500? (Hint: Adjusts animation timing)
     }
 
-    /*
-    🎯 Function: generateCard
-    📌 Purpose: Collects user input from form fields, applies the background color, 
-    and displays the custom e-card.
-    */
-    function generateCard() {
-        let message = document.getElementById('message').value; // 📝 Retrieves user's message
-        let background = document.getElementById('background').value; // 🎨 Retrieves selected background color
-        let ecard = document.getElementById('ecard'); // 📌 Selects the e-card container
 
-        // 🔴 Challenge: What happens if the user clicks submit without entering a message?
-        // 🛑 Answer: This condition prevents an empty message from being submitted.
-        if (message.trim() === "") { 
-            alert("Please enter a message!"); // ⚠️ Displays an alert if the message is empty
-            return;
-        }
-
-        ecard.style.backgroundColor = background; // 🎨 Sets the e-card background color
-        ecard.innerHTML = `<p style="padding: 20px; color: white; font-size: 18px;">${message}</p>`; 
-        // 📝 Inserts user message inside the e-card with inline styling
-
-        ecard.style.display = "block"; // 👀 Makes the e-card visible
-        document.getElementById('download').style.display = "block"; // 📥 Displays the download button
-    }
 
     // 🖱️ Challenge: What does "?.addEventListener" do?
     // Answer: The optional chaining (?) prevents errors if the element doesn’t exist.
@@ -51,4 +25,45 @@ document.addEventListener("DOMContentLoaded", function () {
     if (heart) { 
         heart.classList.add("floating-heart-animation"); // 💖 Adds the floating animation class to the heart
     }
+
+    let noMessages = [
+        "Are you sure? 💔",
+        "Don't you love me, pookie? 🥺",
+        "Why are you doing this to me?😭",
+        "I get it, you hate me...",
+        "FRICK YOU, STOP RESISTING! 😡",
+        "WHY DO YOU HATE ME SO MUCH???",
+        "FINE, BE LIKE THAT, IDC ANYMORE! 😤",
+        "GOOD LUCK FINDING SOMEONE BETTER!"
+
+    ];
+    let clickCount = 0; 
+
+    function changeNo() {
+        let yesButton = document.querySelector(".yes-button");
+        let noButton = document.querySelector(".no-button");
+    
+        clickCount++;
+        if (clickCount < noMessages.length) {
+            noButton.innerText = noMessages[clickCount];
+        } else {
+            // Reset or hide the noButton if you want to stop at the last message
+            noButton.style.display = "none"; // This hides the "No" button when all messages are shown
+        }
+    
+        // Increase font size of "Yes" button
+        let currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+        let newSize = parseFloat(currentFontSize) * 1.2; // Scale font size up by 20% instead of doubling
+        yesButton.style.fontSize = newSize + 'px';
+        yesButton.style.transition = "font-size 0.3s"; // Add transition for smooth effect
+        // Change text of "Yes" button after all messages are shown
+        if (clickCount === noMessages.length) {    
+        yesButton.innerText = "HA! GOTCHA!"; 
+        }
+    }
+    function sayYes() {
+        window.location.href = "yespage.html";
+    }
+document.querySelector(".no-button")?.addEventListener("click", changeNo);
+document.querySelector(".yes-button")?.addEventListener("click", sayYes);
 });
