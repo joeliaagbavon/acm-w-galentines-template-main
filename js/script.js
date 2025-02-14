@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Change text of "Yes" button after all messages are shown
         if (clickCount === noMessages.length) {    
-        yesButton.innerText = "HA! GOTCHA!"; 
+        yesButton.innerText = "HA! SUCKER!"; 
         }
     }
     function sayYes() {

@@ -142,6 +142,7 @@ body {
     font-family: "Atma", serif;
   font-weight: 500;
   font-style: normal;
+  overflow-wrap: auto;
    
   }
    .no-button {
