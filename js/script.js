@@ -30,11 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "Are you sure? 💔",
         "Don't you love me, pookie? 🥺",
         "Why are you doing this to me?😭",
-        "No, its fine, I get it, you hate me...",
+        "Just so you know, you're hurting my feelings ☹️",
+        "I'm crying rn if you even care 😒 ",
+        "Somewhere in the world rn, a child is weeping",
         "FRICK YOU, STOP RESISTING! 😡",
         "WHY DO YOU HATE ME SO MUCH???",
         "FINE, BE LIKE THAT, IDC ANYMORE! 😤",
         "GOOD LUCK FINDING SOMEONE BETTER!",
+        "I'll be under your bed tonight 👹",
         "You're still saying no? ....kinda embarrassing for you... 🫥",
         "Are you not tired, I know I am... 🥱",
         "PLEASE IM DESPEARATE! "
@@ -59,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let newYesSize = parseFloat(currentYesFontSize) * 1.2; // Scale font size up by 20% instead of doubling
         yesButton.style.fontSize = newYesSize + 'px';
         yesButton.style.transition = "font-size 0.3s"; // Add transition for smooth effect
-        
+
        
         
         // Change text of "Yes" button after all messages are shown

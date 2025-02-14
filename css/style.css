@@ -133,9 +133,7 @@ body {
      flex-direction: row; /* Stacks buttons vertically */
      justify-content: center; /* Centers the button horizontally */
        gap: 12px; /* Adds space between buttons */
-      
-     
-     
+
        
   }
   .yes-button {
@@ -155,7 +153,6 @@ body {
    }
   /* Styles the main button */
   button {
-     background: #ff69b4; /* Sets the primary button color */
      color: white; /* Sets the text color */
      font-weight: bold; /* Makes the text stand out */
      cursor: pointer; /* Changes the cursor to indicate interactivity */
