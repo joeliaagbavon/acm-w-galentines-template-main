@@ -97,8 +97,9 @@ body {
            align-items: center;
            justify-content: center;
            max-width: 500px;
+           
            width: 100%;
-           height: 80vh;
+        
            box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 15px;
            text-align: center;
            position: relative;
@@ -112,6 +113,7 @@ body {
            animation: 1s ease-in-out 0s 1 normal none running fadeIn;
            text-align: center; 
            gap: 20px;
+           
   }
   /* Styling for Valentine Question */
   .valentine-question {
@@ -131,7 +133,8 @@ body {
      flex-direction: row; /* Stacks buttons vertically */
      justify-content: center; /* Centers the button horizontally */
        gap: 12px; /* Adds space between buttons */
-       height: 100px;
+      
+     
      
        
   }
@@ -190,7 +193,7 @@ body {
   .yes-page {
    display: flex; /* Centers content horizontally */
    flex-direction: column;
-  height: 80vh; /* Full height viewport */
+
    justify-content: center; /* Aligns content in the center */
    align-content: center; /* Aligns content vertically */
    background-color: #fff; /* White background */
@@ -213,7 +216,8 @@ body {
   
   /* Styles the main heading */
   h1 {
-     font-size: 50px; /* Sets the font size */
+     font-size: 36px; /* Sets the font size */
+     max-height: 100vh;
   }
   
   /* Styles the paragraph */
